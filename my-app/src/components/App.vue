@@ -57,6 +57,8 @@
   </div>
 </div>
 
+<!-- Hope this will work -->
+
     <p class="username">{{ currentUser.username }}'s posts:</p>
     <ul>
       <li v-for="post in posts" :key="post.id">{{ post.content }}</li>
