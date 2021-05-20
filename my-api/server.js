@@ -5,17 +5,14 @@ const schema = gql(`
     currentUser: User
     postsByUser(userId: String!): [Post]
   }
-
   type Mutation {
     addPost(content: String): Post 
   }
-
   type User {
     id: ID!
     username: String!
-    posts: String!
+    posts: [Post]
   }
-
   type Post {
     id: ID!
     content: String!
@@ -39,12 +36,7 @@ data.posts = [
   {
     id: 'xyz-3',
     content: "Third Post - Hello again",
-    userId: 'abc-2',
-  },
-  {
-    id: 'xyz-4',
-    content: "Fourth Post - Hello again",
-    userId: 'abc-2',
+    userId: 'abc-3',
   }
 ];
 
@@ -55,15 +47,11 @@ data.users = [
   },
   {
     id: 'abc-2', 
-    username: "FaiqRamlee",
+    username: "FaiqNaiq",
   },
   {
     id: 'abc-3', 
     username: "IqbalHaziq",
-  },
-  {
-    id: 'abc-4', 
-    username: "NabilFauzi",
   }
 ];
 
